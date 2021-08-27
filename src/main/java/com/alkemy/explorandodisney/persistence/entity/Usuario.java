@@ -1,6 +1,7 @@
 package com.alkemy.explorandodisney.persistence.entity;
 
 import org.hibernate.annotations.ColumnTransformer;
+import org.hibernate.annotations.Type;
 
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Usuario {
     @Column(unique = true)
     private String usuario;
     @Lob
+    @Type(type="org.hibernate.type.BinaryType")
     @Basic(fetch = FetchType.LAZY)
     @Column(columnDefinition = "Text")
     @ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
