@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/auth")
 @Api(tags = {"Login"})
