@@ -23,7 +23,7 @@ public class Usuario {
     @Lob
     @Type(type="org.hibernate.type.BinaryType")
     @Basic(fetch = FetchType.LAZY)
-    //@Column(columnDefinition = "Text")
+    @Column(columnDefinition = "Text")
    // @ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
     private String clave;
 
