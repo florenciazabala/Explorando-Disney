@@ -21,7 +21,7 @@ public class Usuario {
     @Column(unique = true)
     private String usuario;
     @Lob
-    //@Type(type="org.hibernate.type.BinaryType")
+    @Type(type="org.hibernate.type.BinaryType")
     @Basic(fetch = FetchType.LAZY)
     @Column(columnDefinition = "Text")
    // @ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
