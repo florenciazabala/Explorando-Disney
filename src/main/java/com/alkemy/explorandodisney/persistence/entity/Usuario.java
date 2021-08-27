@@ -25,14 +25,15 @@ public class Usuario {
     @Basic(fetch = FetchType.LAZY)
     //@Column(columnDefinition = "Text")
     //@ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
+     final String KEY = "Alkemy";
     @ColumnTransformer(
             read =  "pgp_sym_decrypt(" +
                     "    test, " +
-                    "    current_setting('encrypt.key')" +
+                    "    current_setting("+KEY+")" +
                     ")",
             write = "pgp_sym_encrypt( " +
                     "    ?, " +
-                    "    current_setting('encrypt.key')" +
+                    "    current_setting("+KEY+")" +
                     ") "
     )
     @Column(columnDefinition = "bytea")
