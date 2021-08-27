@@ -26,8 +26,8 @@ public class Usuario {
     //@Column(columnDefinition = "Text")
     //@ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
      final String KEY = "Alkemy";
-    //@ColumnTransformer(read = “pgp_sym_decrypt(clave,‘mySecretKey’)”, write = “pgp_sym_encrypt(?, ‘mySecretKey’)”)
-    @ColumnTransformer(
+    @ColumnTransformer(read = "pgp_sym_decrypt(clave,‘alkemy’)", write = "pgp_sym_encrypt(?, ‘alkemy’)")
+    /*@ColumnTransformer(
             read =  "pgp_sym_decrypt(" +
                     "    clave, " +
                     "    current_setting("+KEY+")" +
@@ -36,7 +36,7 @@ public class Usuario {
                     "    ?, " +
                     "    current_setting("+KEY+")" +
                     ") "
-    )
+    )*/
     @Column(columnDefinition = "bytea")
     private String clave;
 
