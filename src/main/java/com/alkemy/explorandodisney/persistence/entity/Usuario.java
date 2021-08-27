@@ -25,8 +25,9 @@ public class Usuario {
     //@Basic(fetch = FetchType.LAZY)
     //@Column(columnDefinition = "Text")
     //@ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
+    final String KEY ="ALKEMY";
     @Column(name = "clave",columnDefinition = "bytea")
-    @ColumnTransformer(forColumn = "clave",read = "pgp_sym_decrypt(clave,‘alkemy’)", write = "pgp_sym_encrypt(?, ‘alkemy’)")
+    @ColumnTransformer(forColumn = "clave", read = "pgp_sym_decrypt(clave,"+KEY+")", write = "pgp_sym_encrypt(?,"+KEY+")")
 
     private String clave;
 
