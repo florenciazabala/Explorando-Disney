@@ -23,8 +23,19 @@ public class Usuario {
     @Lob
     @Type(type="org.hibernate.type.BinaryType")
     @Basic(fetch = FetchType.LAZY)
-    @Column(columnDefinition = "Text")
-    @ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
+    //@Column(columnDefinition = "Text")
+    //@ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
+    @ColumnTransformer(
+            read =  "pgp_sym_decrypt(" +
+                    "    test, " +
+                    "    current_setting('encrypt.key')" +
+                    ")",
+            write = "pgp_sym_encrypt( " +
+                    "    ?, " +
+                    "    current_setting('encrypt.key')" +
+                    ") "
+    )
+    @Column(columnDefinition = "bytea")
     private String clave;
 
     public Usuario() {
