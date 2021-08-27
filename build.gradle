@@ -28,6 +28,7 @@ dependencies {
 
 	//runtimeOnly 'mysql:mysql-connector-java'
 	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'com.h2database:h2'
 	implementation 'org.mapstruct:mapstruct:1.4.1.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.1.Final'
 
