@@ -18,6 +18,12 @@ Esta es la forma en la consideré más óptima manejar la relación.
 * Swagger: una vez desplegado el proyecto se podrá acceder mediante la url: http://localhost:8080/exploring-disney-world/api/swagger-ui.html <br>
   *Swagger no soporta hasta el momento endpoints iguales con diferentes parámetros por lo que no pueden probarse correctamente todos los filtros de búsqueda creados.*
 
-## Ejecución
+## Ejecución 🔧
 
+   > java -jar -Dspring.profiles.active=pdn build/libs/explorando-disney-1.0.jar
+> 
 ## Construido con 🛠️
+
+    * Spring
+    * Gradle
+    * MySQL
