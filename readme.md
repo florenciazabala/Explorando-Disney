@@ -35,4 +35,4 @@ Despliegue:
 
 Servicios externos:
 
-* Sendgrid
+* SendGrid
