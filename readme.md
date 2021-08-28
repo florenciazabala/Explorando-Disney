@@ -20,6 +20,8 @@ Esta es la forma en la consideré más óptima manejar la relación.
 
 ## Ejecución 🔧
 
+Despliegue:
+
      java -jar -Dspring.profiles.active=pdn build/libs/explorando-disney-1.0.jar
 > 
 ## Construido con 🛠️
