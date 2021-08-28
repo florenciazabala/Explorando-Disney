@@ -6,10 +6,7 @@ import com.alkemy.explorandodisney.domain.service.CharacterService;
 import com.alkemy.explorandodisney.domain.service.ImageService;
 import com.alkemy.explorandodisney.persistence.mapper.CharacterMapper;
 import com.alkemy.explorandodisney.web.controller.exeptions.InvalidDataException;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.Authorization;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpStatus;
@@ -104,7 +101,10 @@ public class CharacterController {
     public void deleteMovie(@ApiParam(value = "The name of the character",required = true, example = "Woody")@RequestParam("name") String name){characterService.deleteByName(name);}
 
     //CREATE IMAGE
-    @ApiOperation(value = "Upload the image", authorizations = { @Authorization(value="JWT")}, response = FileSystemResource.class, produces = "image/jpeg")
+    @ApiOperation(value = "Upload the image", authorizations = { @Authorization(value="JWT")},consumes = "multipart / form-data",response = FileSystemResource.class, produces = "image/jpeg")
+    @ApiImplicitParams({
+            @ApiImplicitParam (name = "file", paramType = "form", value = "archivo temporal", dataType = "file", required = true),
+    })
     @PostMapping(value = "/upload/image",headers=("content-type=multipart/form-data"),produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public byte[] uploadImage(@RequestParam("idCharacter") Long idCharacter,
