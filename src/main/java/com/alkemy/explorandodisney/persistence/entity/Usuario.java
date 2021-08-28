@@ -1,14 +1,8 @@
 package com.alkemy.explorandodisney.persistence.entity;
 
 import org.hibernate.annotations.ColumnTransformer;
-import org.hibernate.annotations.Type;
-
-
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+
 
 
 @Entity
@@ -24,10 +18,6 @@ public class Usuario {
     @Basic(fetch = FetchType.LAZY)
     @Column(columnDefinition = "Text")
     @ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
-
-    //@Column(name = "clave",columnDefinition = "bytea")
-   // @ColumnTransformer(forColumn = "clave", read = "pgp_sym_decrypt(clave,'disney')", write = "pgp_sym_encrypt(?,'disney')")
-    //@Type(type="org.hibernate.type.BinaryType")
     private String clave;
 
     public Usuario() {
