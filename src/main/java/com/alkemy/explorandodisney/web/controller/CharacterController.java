@@ -119,7 +119,7 @@ public class CharacterController {
     @ApiOperation(value = "See the picture", authorizations = { @Authorization(value="JWT") }, response = FileSystemResource.class, produces = "image/jpeg")
     @GetMapping(value = "/image",produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public byte[] getImage(@RequestParam("idCharacter")Long idCharacter){
+    public byte[] getImage(@ApiParam(value = "The id of the character",required = true,example ="2")@RequestParam("idCharacter")Long idCharacter){
         return imageService.getImageCharacter(idCharacter);
     }
 }
