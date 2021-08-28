@@ -1,4 +1,4 @@
-# Explorando Disney - Challange
+# Explorando Disney - API Rest
 
 El nudo del proyecto se centró en la relación bidireccional y múltiple existente entre los personajes y las películas.
 Al acceder a los datos de la película pueden verse el listado de personajes relacionados y de manera inversa al acceder a los datos del personaje pueden verse los títulos de las películas en las que participa.
@@ -27,6 +27,9 @@ Despliegue:
 ## Construido con 🛠️
 
 * Spring
+  * Spring Boot
+  * Spring Data JPA
+  * Spring Security
 * Gradle
 * MySQL
 
