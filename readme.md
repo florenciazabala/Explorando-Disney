@@ -24,7 +24,7 @@ Despliegue:
 
      java -jar -Dspring.profiles.active=pdn build/libs/explorando-disney-1.0.jar
 
-**Nota:** *en modo de producción se encuentra conectado a una base de datos remota.*
+**Nota:** *en modo de producción se encuentra conectada a una base de datos remota.*
 *En la carpeta 'Mysql Script database' se encuentra guardado el script de la base para crearla localmente en caso de ser necesario*
 > 
 ## Construido con 🛠️
