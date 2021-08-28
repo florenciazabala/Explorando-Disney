@@ -29,3 +29,7 @@ Despliegue:
 * Spring
 * Gradle
 * MySQL
+
+Servicios externos:
+
+* Sendgrid
