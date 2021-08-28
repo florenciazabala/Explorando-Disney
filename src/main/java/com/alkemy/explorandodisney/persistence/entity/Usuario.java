@@ -3,8 +3,6 @@ package com.alkemy.explorandodisney.persistence.entity;
 import org.hibernate.annotations.ColumnTransformer;
 import javax.persistence.*;
 
-
-
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -14,6 +12,7 @@ public class Usuario {
     private String mail;
     @Column(unique = true)
     private String usuario;
+
     @Lob
     @Basic(fetch = FetchType.LAZY)
     @Column(columnDefinition = "Text")

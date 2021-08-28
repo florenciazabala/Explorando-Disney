@@ -21,6 +21,4 @@ public interface UsuarioCrudRepository extends CrudRepository<Usuario,String> {
     @Modifying
     void deleteByMail(String mail);
 
-    //boolean existsMail(String mail);
-    //boolean existsUser(String user);
 }

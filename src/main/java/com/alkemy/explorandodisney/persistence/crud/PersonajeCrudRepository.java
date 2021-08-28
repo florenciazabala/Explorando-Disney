@@ -42,7 +42,6 @@ public interface PersonajeCrudRepository extends CrudRepository<Personaje, Long>
 
         /// Relation
         @Query( value = "select count(*) from personajes_peliculas  where exists( select * from personajes_peliculas  where personaje_id=:idPersonaje and pelicula_id= :idPelicula) limit 1", nativeQuery = true)
-        //@Query(value = "SELECT CASE WHEN COUNT(c) > 0 THEN true ELSE false END FROM personajes_peliculas p WHERE p.personaje_id=:idPersonaje and p.pelicula_id= :idPelicula",nativeQuery = true)
         Integer exists(@Param("idPersonaje") Long idPersonaje,@Param("idPelicula")Long idPelicula);
         @Modifying
         @Query( value = "insert into personajes_peliculas  (personaje_id, pelicula_id) values (:idPersonaje ,:idPelicula)", nativeQuery = true)
