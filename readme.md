@@ -20,10 +20,10 @@ Esta es la forma en la consideré más óptima manejar la relación.
 
 ## Ejecución 🔧
 
-   > java -jar -Dspring.profiles.active=pdn build/libs/explorando-disney-1.0.jar
+    > java -jar -Dspring.profiles.active=pdn build/libs/explorando-disney-1.0.jar
 > 
 ## Construido con 🛠️
 
-    * Spring
-    * Gradle
-    * MySQL
+* Spring
+* Gradle
+* MySQL
