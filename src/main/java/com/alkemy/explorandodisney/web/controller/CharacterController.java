@@ -52,25 +52,25 @@ public class CharacterController {
 
     @ApiOperation(value = "Search for the characters of a movie", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = "movies")
-    public List<CharacterList>getByMovies(@RequestParam String movies){
+    public List<CharacterList>getByMovies(@ApiParam(value = "The title of the movie",required = true,example ="Star Wars I: La amenaza fantasma")@RequestParam String movies){
         return characterService.getByMovies(movies);
     }
 
     @ApiOperation(value = "Search characters by name", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = "name")
-    public List<CharacterList>getByName(@RequestParam String name){
+    public List<CharacterList>getByName(@ApiParam(value = "The name of character",required = true,example ="Chew")@RequestParam String name){
         return characterService.getByName(name);
     }
 
     @ApiOperation(value = "Search characters by age range", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = {"youngerAge","olderAge"})
-    public List<CharacterList>getByAge(@RequestParam Integer youngerAge,@RequestParam Integer olderAge){
+    public List<CharacterList>getByAge(@ApiParam(value = "The younger age",required = true,example ="100")@RequestParam Integer youngerAge,@ApiParam(value = "The older age",required = true,example ="900")@RequestParam Integer olderAge){
         return characterService.getByAge(youngerAge,olderAge);
     }
 
     @ApiOperation(value = "Search characters by weight range", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = {"lowerWeight","higherWeight"})
-    public List<CharacterList>getByWeight(@RequestParam Double lowerWeight, @RequestParam Double higherWeight){
+    public List<CharacterList>getByWeight(@ApiParam(value = "The smallest weight",required = true,example ="10")@RequestParam Double lowerWeight,@ApiParam(value = "The greatest weight",required = true,example ="50") @RequestParam Double higherWeight){
         return characterService.getByWeight(lowerWeight,higherWeight);
     }
 

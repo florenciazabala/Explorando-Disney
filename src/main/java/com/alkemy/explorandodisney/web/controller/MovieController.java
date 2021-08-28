@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
@@ -43,13 +42,13 @@ public class MovieController {
 
     @ApiOperation(value = "Search a movie by tile", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = "title")
-    public List<MovieList> getByTitle(@ApiParam(value = "The title of the movie",required = true,example = "Alicia en el pais de las maravillas") @RequestParam String title){
+    public List<MovieList> getByTitle(@ApiParam(value = "The title of movie",required = true,example ="Star Wars")@RequestParam String title){
         return movieSevice.getByTitle(title);
     }
 
     @ApiOperation(value = "Get a list of all movies by category", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = "category")
-    public  List<MovieList> getByCategory(@ApiParam @RequestParam String category){
+    public  List<MovieList> getByCategory(@ApiParam(value = "The movie genre",required = true,example ="ciencia ficcion") @RequestParam String category){
         return movieSevice.getByCategory(category);
     }
 
@@ -64,7 +63,7 @@ public class MovieController {
 
     @ApiOperation(value = "Search a movie by id", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = "idMovie")
-    public Movie getDescriptionMovie(@ApiParam @RequestParam("idMovie") Long idPelicula){
+    public Movie getDescriptionMovie(@ApiParam(value = "The id of the movie",required = true,example ="8") @RequestParam("idMovie") Long idPelicula){
         return movieSevice.getById(idPelicula);
     }
 

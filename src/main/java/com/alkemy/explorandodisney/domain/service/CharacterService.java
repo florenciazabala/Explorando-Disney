@@ -49,7 +49,7 @@ public class CharacterService {
     public List<CharacterList> getByWeight(Double lowerWeight, Double higherWeight){
         List<CharacterList> charactersLists = characterRepository.getByWeight(lowerWeight,higherWeight);
         if (charactersLists.isEmpty()){
-            throw new NoSuchElementException("There aren't any characters with weights between "+lowerWeight+" and "+higherWeight+" years");
+            throw new NoSuchElementException("There aren't any characters with weights between "+lowerWeight+" and "+higherWeight+" ");
         }
         Collections.sort(charactersLists,(x, y) -> x.getName().compareToIgnoreCase(y.getName()));
         return charactersLists;
