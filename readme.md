@@ -14,7 +14,7 @@ Esta es la forma en la consideré más óptima manejar la relación.
 
 ## Documentación 📋
 
-* Postman: en la carpeta 'Postman' se ecuentra el archivo .json todos los endpoints documentados.
+* Postman: en la carpeta 'Postman' se ecuentra el archivo .json con todos los endpoints documentados.
 * Swagger: una vez desplegado el proyecto se podrá acceder mediante la url: http://localhost:8080/exploring-disney-world/api/swagger-ui.html <br>
   *Swagger no soporta hasta el momento endpoints iguales con diferentes parámetros por lo que no pueden probarse correctamente todos los filtros de búsqueda creados.*
 
