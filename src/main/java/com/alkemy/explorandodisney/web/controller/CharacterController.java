@@ -7,7 +7,11 @@ import com.alkemy.explorandodisney.domain.service.ImageService;
 import com.alkemy.explorandodisney.persistence.mapper.CharacterMapper;
 import com.alkemy.explorandodisney.web.controller.exeptions.InvalidDataException;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
@@ -34,37 +38,43 @@ public class CharacterController {
     @Autowired
     private ImageService imageService;
 
+    @ApiOperation(value = "Get a list of all characters", authorizations = { @Authorization(value="JWT") })
     @GetMapping
     public List<CharacterList> getAll(){
         return characterService.getAll();
     }
 
+    @ApiOperation(value = "Search a movie whith an ID", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = "idCharacter")
-    public Character getDescriptionCharacter(@RequestParam Long idCharacter){
+    public Character getDescriptionCharacter(@ApiParam(value = "The id of the character",required = true,example ="20")@RequestParam Long idCharacter){
         return characterService.getById(idCharacter);
     }
 
+    @ApiOperation(value = "Search for the characters of a movie", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = "movies")
     public List<CharacterList>getByMovies(@RequestParam String movies){
         return characterService.getByMovies(movies);
     }
 
+    @ApiOperation(value = "Search characters by name", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = "name")
     public List<CharacterList>getByName(@RequestParam String name){
         return characterService.getByName(name);
     }
 
+    @ApiOperation(value = "Search characters by age range", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = {"youngerAge","olderAge"})
     public List<CharacterList>getByAge(@RequestParam Integer youngerAge,@RequestParam Integer olderAge){
         return characterService.getByAge(youngerAge,olderAge);
     }
 
+    @ApiOperation(value = "Search characters by weight range", authorizations = { @Authorization(value="JWT") })
     @GetMapping(params = {"lowerWeight","higherWeight"})
     public List<CharacterList>getByWeight(@RequestParam Double lowerWeight, @RequestParam Double higherWeight){
         return characterService.getByWeight(lowerWeight,higherWeight);
     }
 
-
+    @ApiOperation(value = "Create a character", authorizations = { @Authorization(value="JWT") })
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void createCharacter(@Valid @RequestBody Character character, BindingResult result){
@@ -76,10 +86,10 @@ public class CharacterController {
         characterService.createCharacter(character);
     }
 
-
+    @ApiOperation(value = "Update a character", authorizations = { @Authorization(value="JWT") })
     @PostMapping("/update")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCharacter(@RequestParam("idCharacter")Long idCharacter,@Valid @RequestBody Character character, BindingResult result){
+    public void updateCharacter(@ApiParam(value = "The id of the character",required = true,example ="20")@RequestParam("idCharacter")Long idCharacter,@Valid @RequestBody Character character, BindingResult result){
         String errorMsg = result.getFieldErrors().stream().map(FieldError::getDefaultMessage)
                 .collect(Collectors.joining(","));
         if (result.hasErrors()){
@@ -88,12 +98,13 @@ public class CharacterController {
         characterService.updateCharacter(idCharacter,character);
     }
 
+    @ApiOperation(value = "Delete a character", authorizations = { @Authorization(value="JWT") })
     @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteMovie(@RequestParam("name") String name){characterService.deleteByName(name);}
+    public void deleteMovie(@ApiParam(value = "The name of the character",required = true, example = "Woody")@RequestParam("name") String name){characterService.deleteByName(name);}
 
     //CREATE IMAGE
-
+    @ApiOperation(value = "Upload the image", authorizations = { @Authorization(value="JWT")}, response = FileSystemResource.class, produces = "image/jpeg")
     @PostMapping(value = "/upload/image",headers=("content-type=multipart/form-data"),produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public byte[] uploadImage(@RequestParam("idCharacter") Long idCharacter,
@@ -105,6 +116,7 @@ public class CharacterController {
     }
 
     //GET IMAGE
+    @ApiOperation(value = "See the picture", authorizations = { @Authorization(value="JWT") }, response = FileSystemResource.class, produces = "image/jpeg")
     @GetMapping(value = "/image",produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public byte[] getImage(@RequestParam("idCharacter")Long idCharacter){
