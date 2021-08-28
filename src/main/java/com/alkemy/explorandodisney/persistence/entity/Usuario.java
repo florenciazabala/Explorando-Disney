@@ -20,15 +20,14 @@ public class Usuario {
     private String mail;
     @Column(unique = true)
     private String usuario;
-    //@Lob
-    //@Type(type="org.hibernate.type.BinaryType")
-    //@Basic(fetch = FetchType.LAZY)
-    //@Column(columnDefinition = "Text")
-    //@ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @Column(columnDefinition = "Text")
+    @ColumnTransformer(read = "AES_DECRYPT(UNHEX(clave), 'alkemy')", write = "HEX(AES_ENCRYPT(?, 'alkemy'))")
 
     //@Column(name = "clave",columnDefinition = "bytea")
    // @ColumnTransformer(forColumn = "clave", read = "pgp_sym_decrypt(clave,'disney')", write = "pgp_sym_encrypt(?,'disney')")
-
+    //@Type(type="org.hibernate.type.BinaryType")
     private String clave;
 
     public Usuario() {
