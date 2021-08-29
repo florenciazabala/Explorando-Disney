@@ -1,6 +1,5 @@
-package com.alkemy.explorandodisney.util;
+package com.alkemy.explorandodisney.mail;
 
-import com.alkemy.explorandodisney.domain.dto.AuthenticationResponse;
 import com.sendgrid.Method;
 import com.sendgrid.Request;
 import com.sendgrid.Response;
@@ -16,7 +15,7 @@ import java.io.IOException;
 public class EmailStructure {
 
     public static void send(String posting, String token) throws IOException {
-        Email from = new Email ("zabalafaz@gmail.com");
+        Email from = new Email ("zabalaflorencia.it@gmail.com");
         Email to = new Email(posting);
         String subject = "Welcome to exploring Disney World!";
 

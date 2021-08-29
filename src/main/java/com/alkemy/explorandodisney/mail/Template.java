@@ -1,6 +1,4 @@
-package com.alkemy.explorandodisney.util;
-
-import javax.swing.text.html.HTMLDocument;
+package com.alkemy.explorandodisney.mail;
 
 public class Template {
     public String getHtmlTemplate(String token){

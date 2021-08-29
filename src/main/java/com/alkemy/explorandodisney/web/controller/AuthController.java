@@ -5,7 +5,7 @@ import com.alkemy.explorandodisney.domain.dto.AuthenticationRequest;
 import com.alkemy.explorandodisney.domain.dto.AuthenticationResponse;
 import com.alkemy.explorandodisney.domain.repository.UserRepositoty;
 import com.alkemy.explorandodisney.domain.service.UserService;
-import com.alkemy.explorandodisney.util.EmailStructure;
+import com.alkemy.explorandodisney.mail.EmailStructure;
 import com.alkemy.explorandodisney.web.controller.exeptions.InvalidDataException;
 import com.alkemy.explorandodisney.web.security.JWTUtil;
 import io.swagger.annotations.Api;
