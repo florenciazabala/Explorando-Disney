@@ -1,0 +1,1119 @@
+{
+	"info": {
+		"_postman_id": "307a4453-d89c-4891-9707-191752c01519",
+		"name": "exploring-disney-Heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "3- Characters",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "create character",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTkxNDM4MiwiZXhwIjoxNjMwMDg3MTgyfQ.CYJbZy1JdT11PsmAN_K6aEFqAK0v_kJGGeOY5Gk5FkU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"picture\": \"\",\r\n    \"name\": \"Sullivan\",\r\n    \"age\": 40,\r\n    \"weight\": 525.100,\r\n    \"story\": \"Es un monstruo que habita Monstruópolis, igual que todos los otros monstruos existentes. Tiene más de dos metros de altura y el pelo azul con manchas moradas, y es el que posee el récord como asustador de niños.\",\r\n    \"titles\": [\r\n        \"Monsters, Inc.\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters/create",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Read",
+					"item": [
+						{
+							"name": "all characters - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmbG9yIiwiaWF0IjoxNjMwMjU5NjIwLCJleHAiOjE2MzA0MzI0MjB9.8sEEwUgTdbKI2Y8aFszpVmBe0jrsfEihuPftVQ6BKUY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "character by id - Description",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmbG9yIiwiaWF0IjoxNjMwMjU5NjIwLCJleHAiOjE2MzA0MzI0MjB9.8sEEwUgTdbKI2Y8aFszpVmBe0jrsfEihuPftVQ6BKUY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters?idCharacter=11",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "idCharacter",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "character by name - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmbG9yIiwiaWF0IjoxNjMwMjU5NjIwLCJleHAiOjE2MzA0MzI0MjB9.8sEEwUgTdbKI2Y8aFszpVmBe0jrsfEihuPftVQ6BKUY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters?name=Chew",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Chew"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "characters by age - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters?youngerAge=100&olderAge=900",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "youngerAge",
+											"value": "100"
+										},
+										{
+											"key": "olderAge",
+											"value": "900"
+										},
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "characters by weight - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters?lowerWeight=10.0&higherWeight=50.0",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "lowerWeight",
+											"value": "10.0"
+										},
+										{
+											"key": "higherWeight",
+											"value": "50.0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "characters by movies - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters?movies=Star Wars I: La amenaza fantasma",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "movies",
+											"value": "Star Wars I: La amenaza fantasma"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "update character",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"picture\": \"pictures/characters/21-Sullivan-2021-08-25-15-00-34.png\",\r\n    \"name\": \"P. Sullivan\",\r\n    \"age\": 41,\r\n    \"weight\": 525.5,\r\n    \"story\": \"Es un monstruo que habita Monstruópolis, igual que todos los otros monstruos existentes. Tiene más de dos metros de altura y el pelo azul con manchas moradas, y es el que posee el récord como asustador de niños.\",\r\n    \"titles\": [\r\n        \"Monsters, Inc.\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters/update?idCharacter=21",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters",
+										"update"
+									],
+									"query": [
+										{
+											"key": "idCharacter",
+											"value": "21"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Images",
+					"item": [
+						{
+							"name": "image character",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters/image?idCharacter=21",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters",
+										"image"
+									],
+									"query": [
+										{
+											"key": "idCharacter",
+											"value": "21"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save image character",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idCharacter",
+											"value": "21",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"contentType": "",
+											"type": "file",
+											"src": "/C:/Users/test/Downloads/Sulley.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters/upload/image",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters",
+										"upload",
+										"image"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "delete character",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters/delete?name=P. Sullivan",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "P. Sullivan"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "2- Movies",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "create movie",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmbG9yIiwiaWF0IjoxNjMwMjU5NjIwLCJleHAiOjE2MzA0MzI0MjB9.8sEEwUgTdbKI2Y8aFszpVmBe0jrsfEihuPftVQ6BKUY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/characters?youngerAge=100&olderAge=900",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "youngerAge",
+											"value": "100"
+										},
+										{
+											"key": "olderAge",
+											"value": "900"
+										},
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Read",
+					"item": [
+						{
+							"name": "all movies - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie by id - Description",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies?idMovie=16",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "idMovie",
+											"value": "16"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movies by title - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies?title=Star Wars",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "Star Wars"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movies by category - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies?category=ciencia ficcion",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "ciencia ficcion"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movies by order asc - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies?order=ASC",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "ASC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movies by order desc - List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies?order=DESC",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "DESC"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "update movie",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"picture\": \"pictures/movies/16-Monsters, Inc.-2021-08-25-14-50-42.png\",\r\n    \"title\": \"Monsters, Inc.\",\r\n    \"creationDate\": \"11-09-2001\",\r\n    \"score\": 4,\r\n    \"category\": \"fantasia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies/update?idMovie=18",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies",
+										"update"
+									],
+									"query": [
+										{
+											"key": "idMovie",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "delete movie and relation",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies/delete?title=Monsters, Inc.",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "Monsters, Inc."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove characters",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTY3MDI3OSwiZXhwIjoxNjI5ODQzMDc5fQ.hL9z-7hAclx5y1iWQWoTnelr3QcVobj-JiIf-zBI7PA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\"Buzz Lightyear\",\"Alicia\"]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies/removeCharacters?title=winnie poo",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies",
+										"removeCharacters"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "winnie poo"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Images",
+					"item": [
+						{
+							"name": "save image movie",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idMovie",
+											"value": "16",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/test/Downloads/Monsters_Inc_Poster.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies/upload/image",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies",
+										"upload",
+										"image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "image movie",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTg2NTE3MCwiZXhwIjoxNjMwMDM3OTcwfQ.yCatqwQv1UfK52s46pL9y1IRgEa9H6UYTgBosBK96dg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies/image?idMovie=16",
+									"protocol": "https",
+									"host": [
+										"exploringdisney",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"exploring-disney-world",
+										"api",
+										"movies",
+										"image"
+									],
+									"query": [
+										{
+											"key": null,
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "idMovie",
+											"value": "16"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "1- Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"flor\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"exploringdisney",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"exploring-disney-world",
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mail\": \"zabalaflorencia.it@gmail.com\",\r\n    \"username\":\"florenz\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/auth/register",
+							"protocol": "https",
+							"host": [
+								"exploringdisney",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"exploring-disney-world",
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relations",
+			"item": [
+				{
+					"name": "add characters Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTY3MDI3OSwiZXhwIjoxNjI5ODQzMDc5fQ.hL9z-7hAclx5y1iWQWoTnelr3QcVobj-JiIf-zBI7PA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"Mike Wazowski\",\"Boo\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies/addCharacters?title=Monsters, Inc.",
+							"protocol": "https",
+							"host": [
+								"exploringdisney",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"exploring-disney-world",
+								"api",
+								"movies",
+								"addCharacters"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Monsters, Inc."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove characters Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGbG9yWiIsImlhdCI6MTYyOTY3MDI3OSwiZXhwIjoxNjI5ODQzMDc5fQ.hL9z-7hAclx5y1iWQWoTnelr3QcVobj-JiIf-zBI7PA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"Buzz Lightyear\",\"Alicia\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://exploringdisney.herokuapp.com/exploring-disney-world/api/movies/removeCharacters?title=winnie poo",
+							"protocol": "https",
+							"host": [
+								"exploringdisney",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"exploring-disney-world",
+								"api",
+								"movies",
+								"removeCharacters"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "winnie poo"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
