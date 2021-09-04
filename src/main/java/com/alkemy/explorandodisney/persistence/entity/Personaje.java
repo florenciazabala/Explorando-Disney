@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "personajes")
-public class Personaje {
+public final class Personaje {
 
     @Id
     @Column(name = "id_personaje")

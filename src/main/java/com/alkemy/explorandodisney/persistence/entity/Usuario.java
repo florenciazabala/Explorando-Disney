@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario {
+public final class Usuario {
 
     @Id
     @Column(unique = true)
